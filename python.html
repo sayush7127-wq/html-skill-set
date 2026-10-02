@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python for Data Science | Skill nest</title>
+  <style>
+    body {
+      background-color: #0f1a14 !important;
+
+    }
+
+    .checklist {
+      color: white;
+    }
+
+
+    span {
+      color: white;
+    }
+
+    :root {
+      --bg: #0f1a14 !important;
+      --bg: #0f1a14;
+      --card: #16251c;
+      color: #eaf3ec;
+      --muted: #9db0a3;
+      --line: #243529;
+      --tag: #1f3a2a;
+      --tag-ink: #9fe0b0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 48px 5.2% 80px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 15px;
+      margin-bottom: 34px;
+    }
+
+    .back:hover {
+      color: var(--ink);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 99px;
+      background: #eaf4dc;
+      color: #21734d;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 1.04;
+      letter-spacing: -2.5px;
+      margin: 0 0 18px;
+    }
+
+    .intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 21px);
+      line-height: 1.55;
+      margin: 0 0 38px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.75fr) minmax(290px, .9fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .left {
+      display: grid;
+      gap: 24px;
+    }
+
+    .panel,
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px;
+    }
+
+    h2 {
+      font-size: 25px;
+      letter-spacing: -.5px;
+      margin: 0 0 22px;
+    }
+
+    .panel p {
+      color: white;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+
+    .panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 17px;
+    }
+
+    .checklist li {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      color: #33443e;
+      line-height: 1.5;
+    }
+
+    .check {
+      color: #4a9b63;
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .price-card {
+      position: sticky;
+      top: 24px;
+    }
+
+    .price {
+      font-size: clamp(40px, 4vw, 52px);
+      font-weight: 750;
+      letter-spacing: -1.5px;
+      margin: 0;
+    }
+
+    .fee {
+      color: var(--muted);
+      margin: 0 0 22px;
+    }
+
+    .details {
+      border-top: 1px solid var(--line);
+      margin-bottom: 25px;
+    }
+
+    .detail {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    .detail span {
+      color: var(--muted);
+    }
+
+    .detail strong {
+      text-align: right;
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 11px;
+      padding: 17px 20px;
+      background: var(--green);
+      color: #10251e;
+      font: inherit;
+      font-weight: 650;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform .15s ease, filter .15s ease;
+    }
+
+    .cta:hover {
+      filter: brightness(.97);
+      transform: translateY(-1px);
+    }
+
+    .cta:focus-visible,
+    a:focus-visible {
+      outline: 3px solid #579d64;
+      outline-offset: 3px;
+    }
+
+    .notice {
+      display: none;
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #eef6e5;
+      color: #245d3c;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .notice.show {
+      display: block;
+    }
+
+    .curriculum {
+      margin-top: 24px;
+    }
+
+    .module {
+      border-top: 1px solid var(--line);
+      padding: 17px 0;
+    }
+
+    .module summary {
+      cursor: pointer;
+      font-weight: 650;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .module p {
+      margin: 13px 0 0;
+    }
+
+    .module small {
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        padding: 30px 20px 56px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card {
+        position: static;
+        grid-row: 1;
+      }
+
+      .panel,
+      .price-card {
+        padding: 24px;
+      }
+
+      h1 {
+        letter-spacing: -1.6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <a class="back" href="courses.html">← <span>Back to all courses</span></a>
+    <div class="eyebrow">Data</div>
+    <h1>Python for Data Science</h1>
+    <p class="intro">Use Python, Pandas and Matplotlib to explore data, uncover patterns and build simple models. Eight
+      weeks to practical, entry-level data science skills.</p>
+
+    <div class="layout">
+      <div class="left">
+        <section class="panel">
+          <h2>About this course</h2>
+          <p>Start with the foundations of Python and learn how to turn raw data into useful insights. Work with
+            realistic datasets, clean and analyse information, create visualisations, and build a small portfolio
+            project.</p>
+          <p>This course is designed for learners who already know basic programming concepts or are comfortable
+            learning them as they go. You will finish with a project you can discuss in interviews and share in your
+            portfolio.</p>
+        </section>
+
+        <section class="panel">
+          <h2>What you will learn</h2>
+          <ul class="checklist">
+            <li><span class="check">✓</span><span>Python fundamentals, variables, functions and working with
+                files</span></li>
+            <li><span class="check">✓</span><span>Explore and clean datasets using Pandas and NumPy</span></li>
+            <li><span class="check">✓</span><span>Analyse data with grouping, filtering and summary statistics</span>
+            </li>
+            <li><span class="check">✓</span><span>Create clear charts with Matplotlib</span></li>
+            <li><span class="check">✓</span><span>Build a small data analysis project and explain your findings</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="panel curriculum">
+          <h2>Course curriculum</h2>
+          <details class="module" open>
+            <summary><span>Module 1 · Python foundations</span><small>Week 1</small></summary>
+            <p>Variables, data types, conditions, loops, functions and reading files.</p>
+          </details>
+          <details class="module">
+            <summary><span>Module 2 · NumPy and Pandas</span><small>Weeks 2–3</small></summary>
+            <p>Arrays, DataFrames, selecting rows, handling missing values, sorting and cleaning data.</p>
+          </details>
+          <details class="module">
+            <summary><span>Module 3 · Data analysis</span><small>Weeks 4–5</small></summary>
+            <p>Grouping, aggregation, joining datasets, descriptive statistics and asking useful questions.</p>
+          </details>
+          <details class="module">
+            <summary><span>Module 4 · Visualisation</span><small>Weeks 6–7</small></summary>
+            <p>Build and customise charts using Matplotlib, then communicate the main takeaways.</p>
+          </details>
+          <details class="module">
+            <summary><span>Module 5 · Portfolio project</span><small>Week 8</small></summary>
+            <p>Analyse a dataset from start to finish, document your approach and present your findings.</p>
+          </details>
+        </section>
+      </div>
+
+      <aside class="price-card">
+        <p class="price">₹2,999</p>
+        <p class="fee">one-time fee</p>
+        <div class="details">
+          <div class="detail"><span>Level</span><strong>Intermediate</strong></div>
+          <div class="detail"><span>Duration</span><strong>8 weeks</strong></div>
+          <div class="detail"><span>Leads to</span><strong>Data Scientist (entry level)</strong></div>
+          <div class="detail"><span>Certificate</span><strong>Included</strong></div>
+        </div>
+        <button class="cta" id="enrollButton" type="button">Enroll now</button>
+        <div class="notice" id="enrollNotice" role="status" aria-live="polite">
+          Thanks for your interest! Enrollment is a demo on this page. Connect this button to your registration or
+          payment flow to accept real enrollments.
+        </div>
+      </aside>
+    </div>
+    <footer>Skill nest · Learn practical skills, one step at a time.</footer>
+  </main>
+  <script>
+    const enrollButton = document.getElementById("enrollButton");
+    const enrollNotice = document.getElementById("enrollNotice");
+    enrollButton.addEventListener("click", () => {
+      enrollNotice.classList.toggle("show");
+      enrollButton.textContent = enrollNotice.classList.contains("show") ? "Enrollment details" : "Enroll now";
+    });
+  </script>
+</body>
+
+</html>

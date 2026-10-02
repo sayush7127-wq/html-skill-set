@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Industry exposure | Skill nest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10261c; --green:#1f6b3a; --lime:#b9f03c; --lime-soft:#eaf9c4;
+    --bg:#f8fbf3; --line:#d9e6c8; --muted:#4d6155;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--green);outline-offset:3px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  header{border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;flex-wrap:wrap;gap:12px}
+  .logo{font-weight:800;font-size:1.25rem;text-decoration:none}
+  .logo span{background:var(--lime);padding:0 6px;border-radius:4px}
+  nav ul{display:flex;gap:22px;list-style:none;font-size:.95rem;font-weight:500;flex-wrap:wrap}
+  nav a{text-decoration:none}
+  nav a:hover,nav a[aria-current]{text-decoration:underline;text-decoration-color:var(--green);text-underline-offset:6px;text-decoration-thickness:3px}
+
+  .hero{padding:72px 0 56px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+  h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.08;font-weight:800;letter-spacing:-.03em}
+  .hero p{margin-top:20px;font-size:1.1rem;color:var(--muted);max-width:52ch}
+  .btn{display:inline-block;margin-top:28px;padding:14px 26px;background:var(--lime);color:var(--ink);font-weight:600;border-radius:8px;text-decoration:none;border:2px solid var(--ink);transition:transform .15s;font:inherit;font-weight:600;cursor:pointer}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+
+  /* memorable element: classroom-to-workplace shift panel */
+  .shift{background:var(--ink);color:#fff;border-radius:14px;padding:26px}
+  .shift h2{font-size:1rem;font-weight:600;color:var(--lime);margin-bottom:14px}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:10px 0;border-top:1px solid rgba(255,255,255,.15);font-size:.95rem}
+  .pair span:first-child{color:#b8c9bd;text-decoration:line-through;text-decoration-color:rgba(255,255,255,.35)}
+  .pair span:last-child{color:var(--lime);font-weight:600}
+
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2.title{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .lead{color:var(--muted);max-width:60ch;margin-bottom:32px}
+
+  .formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
+  .formats div{border-left:4px solid var(--lime);padding-left:16px}
+  .formats h3{font-size:1.1rem;margin-bottom:6px}
+  .formats p{color:var(--muted);font-size:.97rem}
+  .formats .time{display:block;margin-top:8px;font-size:.88rem;font-weight:600;color:var(--green)}
+
+  ol.path{list-style:none;counter-reset:s;display:grid;gap:18px;max-width:720px}
+  ol.path li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+  ol.path li::before{content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--lime);border:2px solid var(--ink);display:grid;place-items:center;font-weight:800}
+  ol.path strong{display:block}
+  ol.path span{color:var(--muted);font-size:.97rem}
+
+  .gain{background:var(--lime-soft);border-radius:14px;padding:28px}
+  .gain ul{margin:12px 0 0 20px}
+  .gain li{margin-bottom:6px}
+
+  form{display:grid;gap:16px;max-width:620px}
+  label{font-weight:500;font-size:.95rem;display:grid;gap:6px}
+  input,select{font:inherit;padding:12px 14px;border:2px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+  input:focus,select:focus{border-color:var(--green);outline:none}
+  form .btn{justify-self:start;margin-top:0}
+  #msg{font-weight:600;color:var(--green);min-height:1.5em}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+
+  @media (max-width:800px){.hero{grid-template-columns:1fr;padding:48px 0 36px}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="index.html"><span>Skill</span> nest</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="industry-exposure.html" aria-current="page">Industry exposure</a></li>
+        <li><a href="approach.html">Our approach</a></li>
+        <li><a href="partner.html">Partner with us</a></li>
+        <li><a href="training-providers.html">Training providers</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Learn how the industry actually works.</h1>
+        <p>Go beyond the classroom. Work on live problems, meet professionals, and see what employers expect before your first job.</p>
+        <a class="btn" href="#join">Join a program</a>
+      </div>
+      <aside class="shift" aria-label="Classroom versus industry">
+        <h2>What changes with exposure</h2>
+        <div class="pair"><span>Practice exercises</span><span>Live client tasks</span></div>
+        <div class="pair"><span>Marks and grades</span><span>Mentor feedback</span></div>
+        <div class="pair"><span>Working alone</span><span>Working in a team</span></div>
+        <div class="pair"><span>Theory tools</span><span>Industry tools</span></div>
+      </aside>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2 class="title">Ways to get exposure</h2>
+      <p class="lead">Pick the format that fits your time and your goal.</p>
+      <div class="formats">
+        <div><h3>Live projects</h3><p>Solve a real problem set by a partner company, with a mentor reviewing your work.</p><span class="time">4 to 6 weeks</span></div>
+        <div><h3>Mentor sessions</h3><p>Talk one-to-one with professionals about roles, skills and career paths.</p><span class="time">1 hour sessions</span></div>
+        <div><h3>Company visits</h3><p>See a working team, its tools and its daily workflow in person or online.</p><span class="time">Half day</span></div>
+        <div><h3>Internships</h3><p>Apply for short placements with partner companies after finishing a project.</p><span class="time">1 to 3 months</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="title">Your path</h2>
+      <p class="lead">Each step builds on the one before it.</p>
+      <ol class="path">
+        <li><div><strong>Learn the skill</strong><span>Complete a course on the courses page.</span></div></li>
+        <li><div><strong>Join a live project</strong><span>Apply the skill to a real brief with a team.</span></div></li>
+        <li><div><strong>Get mentor feedback</strong><span>Review your work with an industry professional.</span></div></li>
+        <li><div><strong>Apply for an internship</strong><span>Use your project as proof of what you can do.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="gain">
+        <h2 class="title">What you take away</h2>
+        <ul>
+          <li>A project you can show in your portfolio and interviews</li>
+          <li>Feedback from people who hire for these roles</li>
+          <li>Experience with team workflows and deadlines</li>
+          <li>Industry contacts for referrals and internships</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <h2 class="title">Join a program</h2>
+      <p class="lead">Tell us what you want to work on. We will email you the next available program.</p>
+      <form id="joinForm">
+        <label>Full name <input name="name" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>College or institute <input name="college"></label>
+        <label>Format you want
+          <select name="format" required>
+            <option value="">Choose one</option>
+            <option>Live project</option>
+            <option>Mentor session</option>
+            <option>Company visit</option>
+            <option>Internship</option>
+          </select>
+        </label>
+        <label>Field of interest
+          <select name="field" required>
+            <option value="">Choose one</option>
+            <option>Web development</option>
+            <option>Cloud and DevOps</option>
+            <option>Data and AI</option>
+            <option>Design</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <button class="btn" type="submit">Send request</button>
+        <p id="msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Skill nest: aligning skill development with industry requirements.</div>
+</footer>
+
+<script>
+  document.getElementById('joinForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('msg').textContent = 'Request received. We will contact you by email.';
+    this.reset();
+  });
+</script>
+</body>
+</html>

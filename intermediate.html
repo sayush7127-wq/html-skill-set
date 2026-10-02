@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SQL and Dashboards | Skill Nest</title>
+<style>
+:root{--bg:#f5f4ef;--card:#fff;--ink:#12301f;--muted:#5d6b62;--line:#e6e8e1;--lime:#b7e65a;--lime-d:#a3d445;--tag:#e3f2dc;--tag-ink:#1f6b3a}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1a14;--card:#16251c;--ink:#eaf3ec;--muted:#9db0a3;--line:#243529;--tag:#1f3a2a;--tag-ink:#9fe0b0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+a.back{color:var(--muted);text-decoration:none;font-weight:500;display:inline-block;margin-bottom:24px}
+a.back:hover{color:var(--ink)}
+.tag{background:var(--tag);color:var(--tag-ink);padding:4px 14px;border-radius:99px;font-size:14px;font-weight:500}
+h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:16px 0 12px}
+.lead{font-size:20px;color:var(--muted);max-width:56ch;margin:0}
+.layout{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;margin-top:36px}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.side{order:-1}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px}
+.panel+.panel{margin-top:24px}
+h2{font-size:24px;margin:0 0 14px}
+ul.ticks{list-style:none;padding:0;margin:0}
+ul.ticks li{padding:6px 0 6px 30px;position:relative}
+ul.ticks li:before{content:"✓";position:absolute;left:0;color:var(--tag-ink);font-weight:700}
+.week{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.week:first-of-type{border-top:0;padding-top:0}
+.week b{color:var(--tag-ink)}
+.week h3{margin:0 0 4px;font-size:18px}.week p{margin:0;color:var(--muted)}
+.side{position:sticky;top:24px}
+.price{font-size:48px;font-weight:700;margin:0;line-height:1}
+.facts{list-style:none;padding:0;margin:20px 0;color:var(--muted)}
+.facts li{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line)}
+.facts b{color:var(--ink);text-align:right}
+.btn{width:100%;background:var(--lime);color:#12301f;border:0;border-radius:10px;padding:16px;font-size:18px;font-weight:600;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--lime-d)}
+:focus-visible{outline:3px solid var(--tag-ink);outline-offset:2px}
+details{border-top:1px solid var(--line);padding:14px 0}details:first-of-type{border-top:0}
+summary{cursor:pointer;font-weight:600}details p{margin:8px 0 0;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:14px 22px;border-radius:10px;display:none;max-width:90%}
+</style></head>
+<body><main class="wrap">
+<a class="back" href="courses.html">← All courses</a>
+<span class="tag">Data</span>
+<h1>SQL and Dashboards</h1>
+<p class="lead">Query databases, join tables and present results in a clear dashboard. Six weeks to the core skill every data analyst uses daily.</p>
+
+<div class="layout">
+<div>
+  <section class="panel">
+    <h2>About this course</h2>
+    <p>Learn to ask databases the right questions and share the answers visually. Every week ends with a graded query challenge, and you finish by building a business report from a real database.</p>
+    <p style="margin-bottom:0">You should be comfortable with spreadsheets or have finished <b>Excel for Data Analysis</b>. This course leads to roles like <b>Data Analyst</b>.</p>
+  </section>
+  <section class="panel">
+    <h2>What you will learn</h2>
+    <ul class="ticks">
+      <li>Write SELECT queries with filters and sorting</li>
+      <li>Join and aggregate data from multiple tables</li>
+      <li>Use subqueries and window functions</li>
+      <li>Present results in a clear dashboard</li>
+    </ul>
+  </section>
+  <section class="panel">
+    <h2>Course outline</h2>
+    <div class="week"><b>Week 1</b><div><h3>SELECT, WHERE and ORDER BY</h3><p>Read data from a table, filter rows and sort results.</p></div></div>
+    <div class="week"><b>Week 2</b><div><h3>Aggregation and GROUP BY</h3><p>Count, sum and average data by category.</p></div></div>
+    <div class="week"><b>Week 3</b><div><h3>Joins</h3><p>Combine customers, orders and products into one result.</p></div></div>
+    <div class="week"><b>Week 4</b><div><h3>Subqueries and window functions</h3><p>Rankings, running totals and comparisons over time.</p></div></div>
+    <div class="week"><b>Week 5</b><div><h3>Dashboard design</h3><p>Turn query results into charts people can act on.</p></div></div>
+    <div class="week"><b>Week 6</b><div><h3>Capstone: business report</h3><p>Query, analyse and present a full report from raw tables.</p></div></div>
+  </section>
+  <section class="panel">
+    <h2>Questions</h2>
+    <details><summary>Which database do we use?</summary><p>You practise in a free browser-based SQL environment, so there is nothing to install.</p></details>
+    <details><summary>How much time do I need each week?</summary><p>Plan for about 5 to 6 hours a week, including the query challenge.</p></details>
+    <details><summary>Do I get a certificate?</summary><p>Yes. You receive a certificate when you finish the capstone report.</p></details>
+  </section>
+</div>
+
+<aside class="panel side">
+  <p class="price">₹2,999</p><span style="color:var(--muted)">one-time fee</span>
+  <ul class="facts">
+    <li><span>Level</span><b>Intermediate</b></li>
+    <li><span>Duration</span><b>6 weeks</b></li>
+    <li><span>Leads to</span><b>Data Analyst</b></li>
+    <li><span>Certificate</span><b>Included</b></li>
+  </ul>
+  <button class="btn" id="enroll">Enroll now</button>
+</aside>
+</div></main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+document.getElementById("enroll").onclick=()=>{
+  const t=document.getElementById("toast");
+  t.textContent="You are enrolled in SQL and Dashboards. Check your email for next steps.";
+  t.style.display="block";setTimeout(()=>t.style.display="none",3500);
+};
+</script></body></html>

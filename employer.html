@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partner with us | Skill nest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f6f4ee; --ink:#12251f; --muted:#5f6b66; --line:#e2dfd6; --lime:#b7e65a; --lime-hover:#a8da48; --green:#2f7d4f; --card:#fff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline:3px solid var(--green); outline-offset:3px; }
+
+  header { border-bottom:1px solid var(--line); }
+  .nav { max-width:1920px; margin:0 auto; padding:26px 80px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .logo { display:flex; align-items:center; gap:12px; font-size:38px; font-weight:500; letter-spacing:-0.5px; }
+  .logo svg { width:36px; height:36px; }
+  .links { display:flex; gap:40px; font-size:18px; }
+  .links a:hover, .links a.active { color:var(--green); }
+  .links a.active { font-weight:600; }
+  .nav-right { display:flex; align-items:center; gap:32px; font-size:18px; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:28px; padding:0 26px; height:64px; border-radius:10px; font-size:18px; font-weight:600; border:1px solid transparent; transition:background .2s, transform .2s; cursor:pointer; font-family:inherit; }
+  .btn-primary { background:var(--lime); color:var(--ink); }
+  .btn-primary:hover { background:var(--lime-hover); transform:translateY(-1px); }
+
+  .wrap { max-width:1920px; margin:0 auto; padding:0 80px; }
+  .intro { padding:72px 0 48px; }
+  h1 { font-size:clamp(40px,5vw,76px); line-height:1.04; font-weight:500; letter-spacing:-0.03em; max-width:900px; }
+  .lede { font-size:20px; line-height:1.6; color:var(--muted); margin-top:24px; max-width:680px; }
+  h2 { font-size:clamp(28px,3vw,40px); font-weight:500; letter-spacing:-0.02em; margin-bottom:28px; }
+  section.block { padding:48px 0; border-top:1px solid var(--line); }
+
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px; }
+  .card h3 { font-size:22px; font-weight:600; margin-bottom:10px; }
+  .card p, .card li { font-size:16px; line-height:1.55; color:var(--muted); }
+  .card ul { padding-left:20px; }
+
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .two ul { padding-left:20px; }
+  .two li { font-size:17px; line-height:1.6; margin-bottom:10px; color:var(--muted); }
+  .two h3 { font-size:22px; font-weight:600; margin-bottom:14px; }
+
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; counter-reset:s; }
+  .step { counter-increment:s; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; }
+  .step::before { content:counter(s); display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:var(--lime); font-weight:600; margin-bottom:14px; }
+  .step strong { display:block; font-size:18px; margin-bottom:6px; }
+  .step span { font-size:15px; line-height:1.5; color:var(--muted); }
+
+  .contact { display:grid; grid-template-columns:1fr 1.2fr; gap:60px; align-items:start; }
+  .contact p { font-size:18px; line-height:1.6; color:var(--muted); margin-bottom:12px; }
+  form { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:32px; display:grid; gap:18px; }
+  label { display:grid; gap:6px; font-size:15px; font-weight:500; }
+  input, select, textarea { font:400 16px "Inter",sans-serif; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink); width:100%; }
+  textarea { min-height:120px; resize:vertical; }
+  .msg { display:none; padding:14px 16px; border-radius:10px; background:#eaf4dc; color:var(--green); font-weight:500; }
+
+  footer { border-top:1px solid var(--line); margin-top:40px; padding:32px 0; font-size:15px; color:var(--muted); }
+
+  @media (max-width:1280px) { .nav,.wrap { padding-left:40px; padding-right:40px; } .links { gap:24px; font-size:16px; } }
+  @media (max-width:980px) { .links,.nav-right .signin { display:none; } .intro { padding-top:48px; } .two,.contact { grid-template-columns:1fr; gap:32px; } }
+  @media (max-width:600px) { .nav,.wrap { padding-left:20px; padding-right:20px; } .logo { font-size:28px; } .logo svg { width:28px; height:28px; } .nav-right .btn { height:48px; padding:0 16px; font-size:15px; } form { padding:20px; } }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo" aria-label="Skill nest home">
+      <svg viewBox="0 0 36 36" aria-hidden="true">
+        <rect x="0" y="20" width="9" height="16" fill="#2f7d4f"/>
+        <rect x="13" y="11" width="9" height="25" fill="#2f7d4f"/>
+        <rect x="26" y="0" width="9" height="36" fill="#2f7d4f"/>
+      </svg>
+      Skill nest
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="courses.html">Explore pathways</a>
+      <a href="partner.html" class="active" aria-current="page">For employers</a>
+      <a href="partner.html">For training providers</a>
+      <a href="#">Our approach</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#" class="signin">Sign in</a>
+      <a href="index.html" class="btn btn-primary">Back to home</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>Help shape the skills learners build</h1>
+    <p class="lede">Tell us what your roles need. We turn it into courses and meet you with learners who are ready to work.</p>
+  </section>
+
+  <section class="block">
+    <h2>Who can partner with us</h2>
+    <div class="cards">
+      <div class="card"><h3>Employers</h3><p>Share the skills you hire for and find learners trained for those roles.</p></div>
+      <div class="card"><h3>Training providers and colleges</h3><p>List your courses and match them to the roles employers ask for.</p></div>
+      <div class="card"><h3>Mentors and industry experts</h3><p>Guide learners and review their projects.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="two">
+      <div>
+        <h3>What partners get</h3>
+        <ul>
+          <li>Access to learners with verified skills</li>
+          <li>A say in course content and skill requirements</li>
+          <li>A company profile, sponsored projects and hiring events</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What we ask from partners</h3>
+        <ul>
+          <li>The skills and tools needed for your roles</li>
+          <li>Feedback on course content</li>
+          <li>Internship, project or mentoring opportunities</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><strong>Contact us</strong><span>Send the form below.</span></div>
+      <div class="step"><strong>Discuss</strong><span>We talk about your needs and goals.</span></div>
+      <div class="step"><strong>Agree on skills</strong><span>We list the roles and skills to focus on.</span></div>
+      <div class="step"><strong>Launch</strong><span>Courses and opportunities go live.</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="contact">
+      <div>
+        <h2>Start a partnership</h2>
+        <p>Fill in the form and we will reply to you by email.</p>
+        <p>Email: partners@skillnest.example</p>
+      </div>
+      <form id="partner-form">
+        <label>Organisation name <input type="text" name="org" required></label>
+        <label>Contact person <input type="text" name="person" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Partner type
+          <select name="type" required>
+            <option value="">Select one</option>
+            <option>Employer</option>
+            <option>Training provider or college</option>
+            <option>Mentor or industry expert</option>
+          </select>
+        </label>
+        <label>Message <textarea name="message" required></textarea></label>
+        <button type="submit" class="btn btn-primary">Send request</button>
+        <p class="msg" id="msg" role="status">Thank you. We received your request and will email you soon.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Skill nest. Aligning skill development with industry requirements.</div>
+</footer>
+
+<script>
+  // Front-end only for now. Connect this to your backend API later.
+  document.getElementById('partner-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('msg').style.display = 'block';
+    this.reset();
+  });
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partner with us | Skill nest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f6f4ee; --ink:#12251f; --muted:#5f6b66; --line:#e2dfd6; --lime:#b7e65a; --lime-hover:#a8da48; --green:#2f7d4f; --card:#fff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline:3px solid var(--green); outline-offset:3px; }
+
+  header { border-bottom:1px solid var(--line); }
+  .nav { max-width:1920px; margin:0 auto; padding:26px 80px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .logo { display:flex; align-items:center; gap:12px; font-size:38px; font-weight:500; letter-spacing:-0.5px; }
+  .logo svg { width:36px; height:36px; }
+  .links { display:flex; gap:40px; font-size:18px; }
+  .links a:hover, .links a.active { color:var(--green); }
+  .links a.active { font-weight:600; }
+  .nav-right { display:flex; align-items:center; gap:32px; font-size:18px; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:28px; padding:0 26px; height:64px; border-radius:10px; font-size:18px; font-weight:600; border:1px solid transparent; transition:background .2s, transform .2s; cursor:pointer; font-family:inherit; }
+  .btn-primary { background:var(--lime); color:var(--ink); }
+  .btn-primary:hover { background:var(--lime-hover); transform:translateY(-1px); }
+
+  .wrap { max-width:1920px; margin:0 auto; padding:0 80px; }
+  .intro { padding:72px 0 48px; }
+  h1 { font-size:clamp(40px,5vw,76px); line-height:1.04; font-weight:500; letter-spacing:-0.03em; max-width:900px; }
+  .lede { font-size:20px; line-height:1.6; color:var(--muted); margin-top:24px; max-width:680px; }
+  h2 { font-size:clamp(28px,3vw,40px); font-weight:500; letter-spacing:-0.02em; margin-bottom:28px; }
+  section.block { padding:48px 0; border-top:1px solid var(--line); }
+
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px; }
+  .card h3 { font-size:22px; font-weight:600; margin-bottom:10px; }
+  .card p, .card li { font-size:16px; line-height:1.55; color:var(--muted); }
+  .card ul { padding-left:20px; }
+
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .two ul { padding-left:20px; }
+  .two li { font-size:17px; line-height:1.6; margin-bottom:10px; color:var(--muted); }
+  .two h3 { font-size:22px; font-weight:600; margin-bottom:14px; }
+
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; counter-reset:s; }
+  .step { counter-increment:s; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; }
+  .step::before { content:counter(s); display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:var(--lime); font-weight:600; margin-bottom:14px; }
+  .step strong { display:block; font-size:18px; margin-bottom:6px; }
+  .step span { font-size:15px; line-height:1.5; color:var(--muted); }
+
+  .contact { display:grid; grid-template-columns:1fr 1.2fr; gap:60px; align-items:start; }
+  .contact p { font-size:18px; line-height:1.6; color:var(--muted); margin-bottom:12px; }
+  form { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:32px; display:grid; gap:18px; }
+  label { display:grid; gap:6px; font-size:15px; font-weight:500; }
+  input, select, textarea { font:400 16px "Inter",sans-serif; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink); width:100%; }
+  textarea { min-height:120px; resize:vertical; }
+  .msg { display:none; padding:14px 16px; border-radius:10px; background:#eaf4dc; color:var(--green); font-weight:500; }
+
+  footer { border-top:1px solid var(--line); margin-top:40px; padding:32px 0; font-size:15px; color:var(--muted); }
+
+  @media (max-width:1280px) { .nav,.wrap { padding-left:40px; padding-right:40px; } .links { gap:24px; font-size:16px; } }
+  @media (max-width:980px) { .links,.nav-right .signin { display:none; } .intro { padding-top:48px; } .two,.contact { grid-template-columns:1fr; gap:32px; } }
+  @media (max-width:600px) { .nav,.wrap { padding-left:20px; padding-right:20px; } .logo { font-size:28px; } .logo svg { width:28px; height:28px; } .nav-right .btn { height:48px; padding:0 16px; font-size:15px; } form { padding:20px; } }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo" aria-label="Skill nest home">
+      <svg viewBox="0 0 36 36" aria-hidden="true">
+        <rect x="0" y="20" width="9" height="16" fill="#2f7d4f"/>
+        <rect x="13" y="11" width="9" height="25" fill="#2f7d4f"/>
+        <rect x="26" y="0" width="9" height="36" fill="#2f7d4f"/>
+      </svg>
+      Skill nest
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="courses.html">Explore pathways</a>
+      <a href="partner.html" class="active" aria-current="page">For employers</a>
+      <a href="partner.html">For training providers</a>
+      <a href="#">Our approach</a>
+    </nav>
+    <div class="nav-right">
+      <a href="signin.html" class="signin">Sign in</a>
+      <a href="mainpage.html" class="btn btn-primary">Back to home</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>Help shape the skills learners build</h1>
+    <p class="lede">Tell us what your roles need. We turn it into courses and meet you with learners who are ready to work.</p>
+  </section>
+
+  <section class="block">
+    <h2>Who can partner with us</h2>
+    <div class="cards">
+      <div class="card"><h3>Employers</h3><p>Share the skills you hire for and find learners trained for those roles.</p></div>
+      <div class="card"><h3>Training providers and colleges</h3><p>List your courses and match them to the roles employers ask for.</p></div>
+      <div class="card"><h3>Mentors and industry experts</h3><p>Guide learners and review their projects.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="two">
+      <div>
+        <h3>What partners get</h3>
+        <ul>
+          <li>Access to learners with verified skills</li>
+          <li>A say in course content and skill requirements</li>
+          <li>A company profile, sponsored projects and hiring events</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What we ask from partners</h3>
+        <ul>
+          <li>The skills and tools needed for your roles</li>
+          <li>Feedback on course content</li>
+          <li>Internship, project or mentoring opportunities</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><strong>Contact us</strong><span>Send the form below.</span></div>
+      <div class="step"><strong>Discuss</strong><span>We talk about your needs and goals.</span></div>
+      <div class="step"><strong>Agree on skills</strong><span>We list the roles and skills to focus on.</span></div>
+      <div class="step"><strong>Launch</strong><span>Courses and opportunities go live.</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="contact">
+      <div>
+        <h2>Start a partnership</h2>
+        <p>Fill in the form and we will reply to you by email.</p>
+        <p>Email: partners@skillnest.example</p>
+      </div>
+      <form id="partner-form">
+        <label>Organisation name <input type="text" name="org" required></label>
+        <label>Contact person <input type="text" name="person" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Partner type
+          <select name="type" required>
+            <option value="">Select one</option>
+            <option>Employer</option>
+            <option>Training provider or college</option>
+            <option>Mentor or industry expert</option>
+          </select>
+        </label>
+        <label>Message <textarea name="message" required></textarea></label>
+        <button type="submit" class="btn btn-primary">Send request</button>
+        <p class="msg" id="msg" role="status">Thank you. We received your request and will email you soon.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Skill nest. Aligning skill development with industry requirements.</div>
+</footer>
+
+<script>
+  // Front-end only for now. Connect this to your backend API later.
+  document.getElementById('partner-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('msg').style.display = 'block';
+    this.reset();
+  });
+</script>
+</body>
+</html>

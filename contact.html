@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact us – Skill nest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f6f4ee; --ink:#12251f; --muted:#5f6b66; --line:#e2dfd6; --lime:#b7e65a; --lime-hover:#a8da48; --green:#2f7d4f; --card:#fff; --error:#b3341f; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+
+  header { border-bottom: 1px solid var(--line); }
+  .nav { max-width: 1400px; margin: 0 auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .logo { display: inline-flex; align-items: center; gap: 10px; font-size: 28px; font-weight: 500; letter-spacing: -0.5px; }
+  .logo svg { width: 30px; height: 30px; }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .btn-auth { display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 10px; font-size: 16px; font-weight: 600; border: 1.5px solid var(--ink); transition: background .2s, color .2s, border-color .2s; }
+  .btn-login:hover { background: var(--ink); color: #fff; }
+  .btn-signin { background: var(--ink); color: #fff; }
+  .btn-signin:hover { background: var(--green); border-color: var(--green); }
+
+  .main { max-width: 1400px; margin: 0 auto; padding: 72px 48px 96px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 96px; align-items: start; }
+  h1 { font-size: clamp(36px, 4.2vw, 58px); line-height: 1.05; font-weight: 500; letter-spacing: -0.03em; }
+  .lede { margin-top: 22px; font-size: 19px; line-height: 1.6; color: var(--muted); max-width: 520px; }
+  .details { margin-top: 48px; border-top: 1px solid var(--line); }
+  .detail { padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .detail h2 { font-size: 15px; font-weight: 600; color: var(--green); }
+  .detail p, .detail a { display: block; margin-top: 6px; font-size: 18px; line-height: 1.5; }
+  .detail a:hover { color: var(--green); text-decoration: underline; }
+  .detail span { display: block; margin-top: 4px; font-size: 15px; color: var(--muted); }
+
+  .panel { background: var(--card); border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(18,37,31,.06); }
+  .panel h2 { font-size: 28px; font-weight: 500; letter-spacing: -0.02em; }
+  .panel > p { margin-top: 8px; font-size: 16px; color: var(--muted); }
+  form { margin-top: 28px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .field { margin-bottom: 20px; }
+  label, legend { display: block; font-size: 15px; font-weight: 500; margin-bottom: 8px; }
+  input[type="text"], input[type="email"], select, textarea {
+    width: 100%; font: inherit; font-size: 16px; color: var(--ink); background: #fff;
+    border: 1px solid var(--line); border-radius: 10px; padding: 0 16px; height: 52px; transition: border-color .2s, box-shadow .2s;
+  }
+  textarea { height: 150px; padding: 14px 16px; resize: vertical; line-height: 1.5; }
+  select { appearance: none; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2312251f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 6 5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center; padding-right: 44px; }
+  input:hover, select:hover, textarea:hover { border-color: #c9c6ba; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(47,125,79,.2); }
+  [aria-invalid="true"] { border-color: var(--error) !important; }
+  .error { display: none; margin-top: 6px; font-size: 14px; color: var(--error); }
+  .field.invalid .error { display: block; }
+  .count { margin-top: 6px; font-size: 13px; color: var(--muted); text-align: right; }
+
+  .btn { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; height: 56px; border-radius: 10px; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer; border: 1px solid transparent; background: var(--lime); color: var(--ink); transition: background .2s; }
+  .btn:hover { background: var(--lime-hover); }
+  .btn svg { width: 18px; height: 18px; }
+  .fine { margin-top: 16px; font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .fine a { color: var(--green); font-weight: 600; }
+
+  .success { display: none; text-align: left; }
+  .success.show { display: block; }
+  .success .tick { width: 48px; height: 48px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; margin-bottom: 20px; }
+  .success .tick svg { width: 24px; height: 24px; }
+  .success h2 { font-size: 28px; font-weight: 500; }
+  .success p { margin-top: 10px; font-size: 17px; line-height: 1.6; color: var(--muted); }
+  .success button { margin-top: 24px; font: inherit; font-size: 16px; font-weight: 600; color: var(--green); background: none; border: 0; cursor: pointer; padding: 0; }
+  .success button:hover { text-decoration: underline; }
+
+  footer { background: #19261f; color: #aab0a6; font-size: 14.5px; }
+  .foot { max-width: 1400px; margin: 0 auto; padding: 28px 48px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .foot nav { display: flex; gap: 32px; }
+  .foot a:hover { color: var(--lime); }
+
+  @media (max-width: 960px) {
+    .main { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px 72px; }
+    .nav { padding: 18px 24px; }
+    .foot { padding: 24px; }
+  }
+  @media (max-width: 560px) {
+    .two { grid-template-columns: 1fr; gap: 0; }
+    .panel { padding: 28px 20px; }
+    .logo { font-size: 24px; }
+    .btn-auth { height: 40px; padding: 0 14px; font-size: 15px; }
+    .nav-right .btn-login { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo" aria-label="Skill nest home">
+      <svg viewBox="0 0 36 36" aria-hidden="true">
+        <rect x="0" y="20" width="9" height="16" fill="#2f7d4f"/>
+        <rect x="13" y="11" width="9" height="25" fill="#2f7d4f"/>
+        <rect x="26" y="0" width="9" height="36" fill="#2f7d4f"/>
+      </svg>
+      Skill nest
+    </a>
+    <div class="nav-right">
+      <a href="auth.html" class="btn-auth btn-login">Log in</a>
+      <a href="auth.html?mode=signup" class="btn-auth btn-signin">Sign in</a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <section>
+    <h1>Talk to the Skill nest team.</h1>
+    <p class="lede">Questions about a pathway, a partnership, or your account? Tell us what you need and we'll point you to the right person.</p>
+
+    <div class="details">
+      <div class="detail"><h2>General enquiries</h2><a href="mailto:hello@skillnest.example">hello@skillnest.example</a><span>We reply within two working days.</span></div>
+      <div class="detail"><h2>Employers and training providers</h2><a href="mailto:partners@skillnest.example">partners@skillnest.example</a><span>Shape pathways around the roles you need.</span></div>
+      <div class="detail"><h2>Phone</h2><a href="tel:+910000000000">+91 00000 00000</a><span>Monday to Friday, 9:00 to 17:00 IST</span></div>
+      <div class="detail"><h2>Office</h2><p>Your street address<br>City, State, PIN</p></div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="form-title">
+    <div id="form-view">
+      <h2 id="form-title">Send us a message</h2>
+      <p>All fields are required.</p>
+
+      <form id="form" novalidate>
+        <div class="two">
+          <div class="field" id="f-name">
+            <label for="name">Full name</label>
+            <input type="text" id="name" autocomplete="name" aria-describedby="e-name">
+            <p class="error" id="e-name">Enter your name.</p>
+          </div>
+          <div class="field" id="f-email">
+            <label for="email">Email address</label>
+            <input type="email" id="email" autocomplete="email" placeholder="you@example.com" aria-describedby="e-email">
+            <p class="error" id="e-email">Enter a valid email, like you@example.com.</p>
+          </div>
+        </div>
+
+        <div class="field" id="f-topic">
+          <label for="topic">I'm contacting you as</label>
+          <select id="topic" aria-describedby="e-topic">
+            <option value="">Choose one</option>
+            <option>A learner</option>
+            <option>An employer</option>
+            <option>A training provider</option>
+            <option>Something else</option>
+          </select>
+          <p class="error" id="e-topic">Choose the option that fits best.</p>
+        </div>
+
+        <div class="field" id="f-msg">
+          <label for="msg">How can we help?</label>
+          <textarea id="msg" maxlength="1000" aria-describedby="e-msg count"></textarea>
+          <p class="error" id="e-msg">Write a short message, at least 10 characters.</p>
+          <p class="count" id="count">0 / 1000</p>
+        </div>
+
+        <button type="submit" class="btn">Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+        <p class="fine">We only use your details to reply to this message. See our <a href="#">Privacy policy</a>.</p>
+      </form>
+    </div>
+
+    <div class="success" id="success" role="status" aria-live="polite">
+      <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#12251f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
+      <h2>Message sent.</h2>
+      <p id="success-text">Thanks. We'll reply to your email within two working days.</p>
+      <button type="button" id="again">Send another message</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <span>© 2026 Skill nest. A concept for industry-aligned learning.</span>
+    <nav><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a></nav>
+  </div>
+</footer>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const msg = $('msg');
+  msg.addEventListener('input', () => { $('count').textContent = msg.value.length + ' / 1000'; });
+
+  function flag(field, input, bad) {
+    $(field).classList.toggle('invalid', bad);
+    bad ? $(input).setAttribute('aria-invalid', 'true') : $(input).removeAttribute('aria-invalid');
+    return bad;
+  }
+
+  $('form').addEventListener('submit', e => {
+    e.preventDefault();
+    const bad = [
+      flag('f-name', 'name', !$('name').value.trim()),
+      flag('f-email', 'email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('email').value.trim())),
+      flag('f-topic', 'topic', !$('topic').value),
+      flag('f-msg', 'msg', msg.value.trim().length < 10)
+    ];
+    if (bad.some(Boolean)) { document.querySelector('.field.invalid input, .field.invalid select, .field.invalid textarea').focus(); return; }
+
+    /* TODO: replace with your real request, e.g.
+       fetch('/api/contact', { method: 'POST', headers: {'Content-Type':'application/json'},
+         body: JSON.stringify({ name: $('name').value, email: $('email').value, topic: $('topic').value, message: msg.value }) }) */
+    $('form-view').style.display = 'none';
+    $('success').classList.add('show');
+    $('success').querySelector('h2').focus?.();
+  });
+
+  $('again').addEventListener('click', () => {
+    $('form').reset();
+    $('count').textContent = '0 / 1000';
+    $('success').classList.remove('show');
+    $('form-view').style.display = '';
+    $('name').focus();
+  });
+</script>
+</body>
+</html>

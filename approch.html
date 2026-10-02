@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our approach | Skill nest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f6f4ee; --ink:#12251f; --muted:#5f6b66; --line:#e2dfd6; --lime:#b7e65a; --lime-hover:#a8da48; --green:#2f7d4f; --card:#fff; --miss:#fde8e4; --miss-ink:#a33a2a; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  a:focus-visible { outline:3px solid var(--green); outline-offset:3px; }
+
+  header { border-bottom:1px solid var(--line); }
+  .nav { max-width:1920px; margin:0 auto; padding:26px 80px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .logo { display:flex; align-items:center; gap:12px; font-size:38px; font-weight:500; letter-spacing:-0.5px; }
+  .logo svg { width:36px; height:36px; }
+  .links { display:flex; gap:40px; font-size:18px; }
+  .links a:hover, .links a.active { color:var(--green); }
+  .links a.active { font-weight:600; }
+  .nav-right { display:flex; align-items:center; gap:32px; font-size:18px; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; padding:0 26px; height:64px; border-radius:10px; font-size:18px; font-weight:600; border:1px solid transparent; transition:background .2s, border-color .2s, transform .2s; }
+  .btn-primary { background:var(--lime); color:var(--ink); }
+  .btn-primary:hover { background:var(--lime-hover); transform:translateY(-1px); }
+  .btn-outline { border-color:var(--line); }
+  .btn-outline:hover { border-color:var(--ink); }
+
+  .wrap { max-width:1920px; margin:0 auto; padding:0 80px; }
+  .intro { padding:72px 0 48px; }
+  h1 { font-size:clamp(40px,5vw,76px); line-height:1.04; font-weight:500; letter-spacing:-0.03em; max-width:960px; }
+  .lede { font-size:20px; line-height:1.6; color:var(--muted); margin-top:24px; max-width:680px; }
+  h2 { font-size:clamp(28px,3vw,40px); font-weight:500; letter-spacing:-0.02em; margin-bottom:12px; }
+  .sub { font-size:18px; line-height:1.6; color:var(--muted); max-width:680px; margin-bottom:28px; }
+  section.block { padding:48px 0; border-top:1px solid var(--line); }
+
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px; counter-reset:s; }
+  .step { counter-increment:s; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:26px; }
+  .step::before { content:counter(s); display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:var(--lime); font-weight:600; margin-bottom:14px; }
+  .step strong { display:block; font-size:20px; margin-bottom:8px; }
+  .step span { font-size:16px; line-height:1.55; color:var(--muted); }
+
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:26px; }
+  .card h3 { font-size:20px; font-weight:600; margin-bottom:8px; }
+  .card p { font-size:16px; line-height:1.55; color:var(--muted); }
+
+  /* Skill gap */
+  .gap { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px; }
+  .panel h3 { font-size:20px; font-weight:600; margin-bottom:16px; }
+  .skills { list-style:none; display:grid; gap:10px; }
+  .skills li { display:flex; justify-content:space-between; gap:12px; padding:12px 16px; border-radius:10px; background:#eaf4dc; font-size:16px; font-weight:500; }
+  .skills li span { font-size:14px; font-weight:400; color:var(--green); }
+  .skills li.miss { background:var(--miss); }
+  .skills li.miss span { color:var(--miss-ink); }
+  .caption { font-size:15px; color:var(--muted); margin-top:16px; }
+
+  .cta-box { background:var(--ink); color:#fff; border-radius:20px; padding:56px; display:flex; flex-wrap:wrap; gap:28px; align-items:center; justify-content:space-between; }
+  .cta-box h2 { margin:0; max-width:560px; }
+  .cta-box .row { display:flex; flex-wrap:wrap; gap:16px; }
+  .cta-box .btn-outline { border-color:#4a5d56; color:#fff; }
+  .cta-box .btn-outline:hover { border-color:#fff; }
+
+  footer { border-top:1px solid var(--line); margin-top:56px; padding:32px 0; font-size:15px; color:var(--muted); }
+
+  @media (max-width:1280px) { .nav,.wrap { padding-left:40px; padding-right:40px; } .links { gap:24px; font-size:16px; } }
+  @media (max-width:980px) { .links,.nav-right .signin { display:none; } .intro { padding-top:48px; } .gap { grid-template-columns:1fr; } }
+  @media (max-width:600px) { .nav,.wrap { padding-left:20px; padding-right:20px; } .logo { font-size:28px; } .logo svg { width:28px; height:28px; } .nav-right .btn { height:48px; padding:0 16px; font-size:15px; } .cta-box { padding:32px 24px; } .btn { height:56px; font-size:16px; } .cta-box .row .btn { flex:1 1 100%; } }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo" aria-label="Skill nest home">
+      <svg viewBox="0 0 36 36" aria-hidden="true">
+        <rect x="0" y="20" width="9" height="16" fill="#2f7d4f"/>
+        <rect x="13" y="11" width="9" height="25" fill="#2f7d4f"/>
+        <rect x="26" y="0" width="9" height="36" fill="#2f7d4f"/>
+      </svg>
+      Skill nest
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="courses.html">Explore pathways</a>
+      <a href="partner.html">For employers</a>
+      <a href="partner.html">For training providers</a>
+      <a href="approach.html" class="active" aria-current="page">Our approach</a>
+    </nav>
+    <div class="nav-right">
+      <a href="signin.html" class="signin">Sign in</a>
+      <a href="index.html" class="btn btn-primary">Back to home</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>We start from the job, not the syllabus</h1>
+    <p class="lede">Many graduates learn things employers do not ask for, and employers cannot find people with the skills they need. Skill nest closes that gap.</p>
+  </section>
+
+  <section class="block">
+    <h2>How we do it</h2>
+    <p class="sub">Four steps take a learner from a career goal to proof of skill.</p>
+    <div class="steps">
+      <div class="step"><strong>Listen to industry</strong><span>We collect skills from job postings, employer input and frameworks like NSDC.</span></div>
+      <div class="step"><strong>Map skills to roles</strong><span>Each role gets a list of required skills and levels.</span></div>
+      <div class="step"><strong>Build learning pathways</strong><span>Courses are chosen or designed to close each skill gap.</span></div>
+      <div class="step"><strong>Prove it</strong><span>Projects and assessments give learners evidence to show employers.</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>What we believe</h2>
+    <div class="cards" style="margin-top:28px">
+      <div class="card"><h3>Role first</h3><p>We begin with what a job needs, then work backwards to what to learn.</p></div>
+      <div class="card"><h3>Practical</h3><p>Every course ends with a project you can show.</p></div>
+      <div class="card"><h3>Open to all</h3><p>We use free resources wherever we can.</p></div>
+      <div class="card"><h3>Kept current</h3><p>Skill lists are updated as industry needs change.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>See your skill gap</h2>
+    <p class="sub">Compare what you know with what a role needs. Anything missing becomes your next learning step. This example is illustrative.</p>
+    <div class="gap">
+      <div class="panel">
+        <h3>Your skills</h3>
+        <ul class="skills">
+          <li>Excel <span>Have</span></li>
+          <li>Basic statistics <span>Have</span></li>
+          <li>Communication <span>Have</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Data Analyst needs</h3>
+        <ul class="skills">
+          <li>Excel <span>Matched</span></li>
+          <li>SQL <span class="miss-label">Missing</span></li>
+          <li>Dashboards <span>Missing</span></li>
+        </ul>
+        <p class="caption">Next step: SQL and Dashboards course.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Built with educators and industry</h2>
+    <p class="sub">Educators review our course content. Employers tell us which skills matter and give feedback on our pathways. <a href="partner.html" style="color:var(--green);font-weight:600;text-decoration:underline">Become a partner</a></p>
+  </section>
+
+  <section class="block">
+    <div class="cta-box">
+      <h2>Ready to take your next step?</h2>
+      <div class="row">
+        <a href="courses.html" class="btn btn-primary">Find your path</a>
+        <a href="partner.html" class="btn btn-outline">Partner with us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Skill nest. Aligning skill development with industry requirements.</div>
+</footer>
+
+<script>
+  // Mark "Missing" items in the example red.
+  document.querySelectorAll('.panel:last-child .skills li').forEach(function (li) {
+    if (li.textContent.indexOf('Missing') !== -1) li.classList.add('miss');
+  });
+</script>
+</body>
+</html>

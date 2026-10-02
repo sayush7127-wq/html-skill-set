@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel for Data Analysis | Skill Nest</title>
+<style>
+:root{--bg:#f5f4ef;--card:#fff;--ink:#12301f;--muted:#5d6b62;--line:#e6e8e1;--lime:#b7e65a;--lime-d:#a3d445;--tag:#e3f2dc;--tag-ink:#1f6b3a}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1a14;--card:#16251c;--ink:#eaf3ec;--muted:#9db0a3;--line:#243529;--tag:#1f3a2a;--tag-ink:#9fe0b0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+a.back{color:var(--muted);text-decoration:none;font-weight:500;display:inline-block;margin-bottom:24px}
+a.back:hover{color:var(--ink)}
+.tag{background:var(--tag);color:var(--tag-ink);padding:4px 14px;border-radius:99px;font-size:14px;font-weight:500}
+h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:16px 0 12px}
+.lead{font-size:20px;color:var(--muted);max-width:56ch;margin:0}
+.layout{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;margin-top:36px}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.side{order:-1}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px}
+.panel+.panel{margin-top:24px}
+h2{font-size:24px;margin:0 0 14px}
+ul.ticks{list-style:none;padding:0;margin:0}
+ul.ticks li{padding:6px 0 6px 30px;position:relative}
+ul.ticks li:before{content:"✓";position:absolute;left:0;color:var(--tag-ink);font-weight:700}
+.week{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.week:first-of-type{border-top:0;padding-top:0}
+.week b{color:var(--tag-ink)}
+.week h3{margin:0 0 4px;font-size:18px}.week p{margin:0;color:var(--muted)}
+.side{position:sticky;top:24px}
+.price{font-size:48px;font-weight:700;margin:0;line-height:1}
+.facts{list-style:none;padding:0;margin:20px 0;color:var(--muted)}
+.facts li{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line)}
+.facts b{color:var(--ink);text-align:right}
+.btn{width:100%;background:var(--lime);color:#12301f;border:0;border-radius:10px;padding:16px;font-size:18px;font-weight:600;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--lime-d)}
+:focus-visible{outline:3px solid var(--tag-ink);outline-offset:2px}
+details{border-top:1px solid var(--line);padding:14px 0}details:first-of-type{border-top:0}
+summary{cursor:pointer;font-weight:600}details p{margin:8px 0 0;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:14px 22px;border-radius:10px;display:none;max-width:90%}
+</style></head>
+<body><main class="wrap">
+<a class="back" href="courses.html">← All courses</a>
+<span class="tag">Data</span>
+<h1>Excel for Data Analysis</h1>
+<p class="lead">Clean, sort and summarise data with formulas, pivot tables and charts. Four weeks to your first analyst-ready skills.</p>
+
+<div class="layout">
+<div>
+  <section class="panel">
+    <h2>About this course</h2>
+    <p>Start from a blank sheet and finish able to turn messy data into clear reports. You will practise on real sales, survey and finance datasets, and end with a dashboard you can show to employers.</p>
+    <p style="margin-bottom:0">No experience needed. If you can open a spreadsheet, you can start. This course leads to roles like <b>Junior Data Analyst</b>.</p>
+  </section>
+  <section class="panel">
+    <h2>What you will learn</h2>
+    <ul class="ticks">
+      <li>Clean and sort messy data</li>
+      <li>Write formulas: VLOOKUP, XLOOKUP, IF and SUMIFS</li>
+      <li>Build pivot tables to summarise thousands of rows</li>
+      <li>Create charts and a one-page dashboard</li>
+    </ul>
+  </section>
+  <section class="panel">
+    <h2>Course outline</h2>
+    <div class="week"><b>Week 1</b><div><h3>Spreadsheet basics and data cleaning</h3><p>Tables, sorting, filters, removing duplicates and fixing errors.</p></div></div>
+    <div class="week"><b>Week 2</b><div><h3>Formulas and functions</h3><p>Lookups, logic and conditional sums on real datasets.</p></div></div>
+    <div class="week"><b>Week 3</b><div><h3>Pivot tables and charts</h3><p>Summarise, group and visualise your findings.</p></div></div>
+    <div class="week"><b>Week 4</b><div><h3>Capstone: sales dashboard</h3><p>Build and present a complete dashboard from raw data.</p></div></div>
+  </section>
+  <section class="panel">
+    <h2>Questions</h2>
+    <details><summary>Do I need to buy Excel?</summary><p>You need a copy of Microsoft Excel (2016 or newer) or Excel for the web, which is free with a Microsoft account.</p></details>
+    <details><summary>How much time do I need each week?</summary><p>Plan for about 5 to 6 hours a week, including practice tasks.</p></details>
+    <details><summary>Do I get a certificate?</summary><p>Yes. You receive a certificate when you finish the capstone dashboard.</p></details>
+  </section>
+</div>
+
+<aside class="panel side">
+  <p class="price">₹1,999</p><span style="color:var(--muted)">one-time fee</span>
+  <ul class="facts">
+    <li><span>Level</span><b>Beginner</b></li>
+    <li><span>Duration</span><b>4 weeks</b></li>
+    <li><span>Leads to</span><b>Junior Data Analyst</b></li>
+    <li><span>Certificate</span><b>Included</b></li>
+  </ul>
+  <button class="btn" id="enroll">Enroll now</button>
+</aside>
+</div></main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+document.getElementById("enroll").onclick=()=>{
+  const t=document.getElementById("toast");
+  t.textContent="You are enrolled in Excel for Data Analysis. Check your email for next steps.";
+  t.style.display="block";setTimeout(()=>t.style.display="none",3500);
+};
+</script></body></html>
